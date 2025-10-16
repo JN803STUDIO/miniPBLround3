@@ -1,0 +1,98 @@
+.loginborder{
+    background-color : rgb(255,255,255,0.5);
+    box-shadow : 0px 0px 20px 0px rgb(167, 167, 167);
+    border-radius: 100px;
+    width: 700px auto;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 65px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 900px;
+    padding: 50px;
+}
+.body{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.Homeborder{
+    border: none;
+    background-color: rgb(135,206,235,0.8);
+    box-shadow : 0px 0px 5px 0px rgb(167, 167, 167);
+    border-radius: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+.Homeborder:hover{
+    background-color: rgb(135,206,235,1);
+}
+.Homeborder2{
+    text-align: center;
+}
+.hometext{
+    color: black;
+    text-decoration: none;
+    border: 0 auto;
+}
+.bg{
+    overflow: hidden;
+    margin: 0 auto;
+}
+.bgimg{
+    margin-top: 76px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+input, select, .sub {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.gender-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+.sub {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 70px;
+  border-radius: 10px;
+}
+
+.sub:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  height: 16px;
+  display: block;
+  margin-top: 4px;
+}

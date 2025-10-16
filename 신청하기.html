@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>신청하기</title>
+</head>
+<body class="body" style="background: #f9ebfa; background: linear-gradient(90deg,rgba(249, 235, 250, 1) 0%, rgba(230, 230, 230, 1) 50%, rgba(247, 240, 225, 1) 100%);">
+  <div class="loginborder">
+    <h1 style="text-align: center; margin-top: 30px;">
+      지원서
+    </h1>
+    <form id="applyForm">
+      <label for="email">이메일</label>
+      <input type="email" id="email" name="email" placeholder="이메일" required>
+      <span id="emailError" class="error"></span>
+
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" placeholder="이름" required>
+
+      <label for="phone">전화번호</label>
+      <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+      <span id="phoneError" class="error"></span>
+
+      <label for="birth">생년월일</label>
+      <input type="date" id="birth" name="birth" required>
+
+      <label>성별</label>
+      <div class="gender-group">
+        <label><input type="radio" name="gender" value="남" required> 남</label>
+        <label><input type="radio" name="gender" value="여"> 여</label>
+      </div>
+
+      <label for="field">희망 분야</label>
+      <select id="field" name="field" required>
+        <option value="">선택하세요</option>
+        <option value="기획">기획</option>
+        <option value="디자인">디자인</option>
+        <option value="코딩">코딩</option>
+      </select>
+
+      <button type="submit" class="sub">제출</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <div class="Homeborder2">
+    <button class="Homeborder" onClick="location.href='./팀.html'">
+      <a class="hometext" href="./index.html">Home</a>
+    </button>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
