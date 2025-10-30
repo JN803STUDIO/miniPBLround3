@@ -1,28 +1,72 @@
-document.getElementById("applyForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwV_2L5nEDzJ2egFB82LLSMhRhYqA8DtGakwiu_V-A16NtSwxD9fl3w8-rtVzK-1t0s0w/exec";
 
-  const email = document.getElementById("email").value.trim();
-  const emailError = document.getElementById("emailError");
-  const phone = document.getElementById("phone").value.trim();
-  const phoneError = document.getElementById("phoneError");
+const form = document.getElementById('applicationForm');
+const submitBtn = document.getElementById('submitBtn');
+const messageDiv = document.getElementById('message');
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phonePattern = /^010-\d{4}-\d{4}$/;
+function showMessage(text, type) {
+    messageDiv.textContent = text;
+    messageDiv.className = `message ${type} show`;
+    setTimeout(() => {
+        messageDiv.classList.remove('show');
+    }, 5000);
+}
 
-  if (!emailPattern.test(email)) {
-    emailError.textContent = "올바른 이메일 형식이 아닙니다.";
-    return;
-  } else {
-    emailError.textContent = "";
-  }
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  if (!phonePattern.test(phone)) {
-    phoneError.textContent = "형식: 010-1234-5678";
-    return;
-  } else {
-    phoneError.textContent = "";
-  }
+    const submitBtn = document.getElementById('submitBtn');
+    const messageDiv = document.getElementById('message');
 
-  alert("신청이 완료되었습니다!");
-  this.reset();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    const formData = {
+        applicant: document.getElementById('name').value,
+        team: document.getElementById('team_form').value,
+        role: document.getElementById('field').value,
+        email: document.getElementById('email').value,
+        phoneNumber: document.getElementById('phone').value,
+        reason: document.getElementById('reason').value
+    };
+
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        form.reset();
+
+    } catch (error) {
+        showMessage('There was an error submitting your application. Please try again.', 'error');
+        console.error('Error:', error);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+    }
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeApplicationForm();
+        }
+    })
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            // Close mobile menu if open
+            const navCollapse = document.getElementById('navMain');
+            if (navCollapse.classList.contains('show')) {
+                bootstrap.Collapse.getInstance(navCollapse)?.hide();
+            }
+        }
+    });
 });
