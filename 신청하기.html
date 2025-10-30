@@ -40,31 +40,36 @@
   <div class="loginborder">
     <h1 style="text-align: center; margin-top: 30px;">지원서</h1>
     <form id="applicationForm">
-      <fieldset class="fieldset">
-        <legend class="legend">이메일</legend>
+      
+      <label for="name">이름</label>
+      <div class="div">
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <label for="email">이메일</label>
         <div class="div">
           <input type="email" id="email" name="email" required>
         </div>
-      </fieldset>
 
       <span id="emailError" class="error"></span>
 
-      <fieldset class="fieldset">
-        <legend class="legend">이름</legend>
-        <input type="text" id="name" name="name" required>
-      </fieldset>
+      
 
-      <label for="team">팀<span class="required">*</span></label>
+      
+
+      <label for="phone">전화번호</label>
+      <div class="div">
+        <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+      </div>
+      <span id="phoneError" class="error"></span>
+
+      <label for="team">팀</label>
       <div class="form-group">
         <select id="team_form" name="team" required>
           <option value="">들어갈 팀을 선택해주세요</option>
           <option value="Brains">Brains</option>
         </select>
       </div>
-
-      <label for="phone">전화번호</label>
-      <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
-      <span id="phoneError" class="error"></span>
 
       <label for="field">희망 분야</label>
       <select id="field" name="field" required>
@@ -76,8 +81,8 @@
 
       <label for="field">지원 동기</label>
       <div class="form-group">
-        <label for="reason">지원 동기가 무엇인가요? <span class="required">*</span></label>
-        <textarea id="reason" name="reason" required placeholder="왜 이 자리를 지원하는지 이유를 알려주세요"></textarea>
+        <label for="reason">지원 동기가 무엇인가요?</label>
+        <textarea style="width: 100%; height: 150px; resize: none; border: 1px solid #ccc; border-radius: 5px; outline: none;" id="reason" name="reason" required placeholder="왜 이 자리를 지원하는지 이유를 알려주세요"></textarea>
       </div>
       <button type="submit" id="submitBtn">제출</button>
     </form>
@@ -93,6 +98,37 @@
     <p>© 2025 Brains. All Rights Reserved.</p>
   </footer>
 
+  
+    <!-- document.getElementById("applyForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const emailError = document.getElementById("emailError");
+    const phone = document.getElementById("phone").value.trim();
+    const phoneError = document.getElementById("phoneError");
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^010-\d{4}-\d{4}$/;
+
+    if (!emailPattern.test(email)) {
+      emailError.textContent = "올바른 이메일 형식이 아닙니다.";
+      return;
+    } else {
+      emailError.textContent = "";
+    }
+
+    if (!phonePattern.test(phone)) {
+      phoneError.textContent = "형식: 010-1234-5678";
+      return;
+    } else {
+      phoneError.textContent = "";
+    }
+
+    alert("신청이 완료되었습니다!");
+    this.reset();
+  }); -->
+
+  
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
