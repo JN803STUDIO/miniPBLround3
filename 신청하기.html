@@ -6,20 +6,51 @@
     <link rel="stylesheet" href="./css.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>신청하기</title>
+    <style>
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        padding: 40px;
+        padding-bottom: 80px;
+        background: linear-gradient(90deg, rgba(249, 235, 250, 1) 0%, rgba(230, 230, 230, 1) 50%, rgba(247, 240, 225, 1) 100%);
+        min-height: 100%;
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px;
+        background: #333;
+        color: white;
+        text-align: center;
+      }
+    </style>
 </head>
-<body class="body" style="background: #f9ebfa; background: linear-gradient(90deg,rgba(249, 235, 250, 1) 0%, rgba(230, 230, 230, 1) 50%, rgba(247, 240, 225, 1) 100%);">
+<body class="body">
   <div class="loginborder">
-    <h1 style="text-align: center; margin-top: 30px;">
-      지원서
-    </h1>
+    <h1 style="text-align: center; margin-top: 30px;">지원서</h1>
     <form id="applyForm">
-      <label for="email">이메일</label>
-      <input type="email" id="email" name="email" placeholder="이메일" required>
+      <fieldset class="fieldset">
+        <legend class="legend">이메일</legend>
+        <div class="div">
+          <input type="email" id="email" name="email" required>
+        </div>
+      </fieldset>
+      
       <span id="emailError" class="error"></span>
 
-      <label for="name">이름</label>
-      <input type="text" id="name" name="name" placeholder="이름" required>
-
+      <fieldset class="fieldset">
+        <legend class="legend">이름</legend>
+        <input type="text" id="name" name="name" required>
+      </fieldset>
+      
       <label for="phone">전화번호</label>
       <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
       <span id="phoneError" class="error"></span>
@@ -45,13 +76,17 @@
     </form>
   </div>
 
-  <script src="script.js"></script>
   <div class="Homeborder2">
     <button class="Homeborder" onClick="location.href='./팀.html'">
       <a class="hometext" href="./index.html">Home</a>
     </button>
   </div>
-  
+
+  <footer>
+    <p>© 2025 Brains. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
